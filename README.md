@@ -92,7 +92,7 @@ streamlit run app.py
 
 | Home | Detection | Dashboard |
 |------|-----------|-----------|
-| ![Home](assets/screenshot_home.png) | ![Detect](assets/screenshot_detect.png) | ![Dashboard](assets/screenshot_dashboard.png) |
+| ![Home](1.png) | ![Detect](2.png) | ![Dashboard](3.png) |
 
 ---
 
