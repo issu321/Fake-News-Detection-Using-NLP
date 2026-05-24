@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detect | Fake News Detection System</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Background Effects -->
+    <div class="bg-animation"></div>
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+    <canvas id="particle-canvas"></canvas>
+    <div class="scanlines"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <a href="index.html" class="logo">
+            <span class="logo-icon">🛡️</span>
+            <div>
+                <div class="logo-text">FND-NLP</div>
+                <div class="logo-sub">v2.0 | issu321</div>
+            </div>
+        </a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="detect.html" class="active">Detect</a></li>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="models.html">Models</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+    </nav>
+
+    <!-- Detection Container -->
+    <div class="detect-container">
+        <div class="detect-header">
+            <h1 style="font-family: var(--font-display); font-size: 2.5rem; color: var(--neon-cyan); text-shadow: 0 0 20px rgba(0, 243, 255, 0.3); margin-bottom: 0.5rem;">
+                🔍 Single Article Analysis
+            </h1>
+            <p style="color: var(--text-secondary); font-size: 1.1rem;">
+                Paste article text for instant AI-powered verification
+            </p>
+        </div>
+
+        <!-- Input Section -->
+        <div class="detect-box">
+            <div class="input-group">
+                <label>Article Content</label>
+                <textarea 
+                    id="article-text" 
+                    class="text-input" 
+                    rows="10" 
+                    placeholder="Paste news article content here for instant verification... The system will analyze linguistic patterns, sentiment, sensationalism, and credibility markers to determine authenticity."
+                ></textarea>
+            </div>
+
+            <div style="margin-bottom: 1.5rem;">
+                <label style="display: block; font-family: var(--font-display); font-size: 0.85rem; color: var(--neon-cyan); margin-bottom: 0.75rem; letter-spacing: 1px;">
+                    Quick Samples
+                </label>
+                <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+                    <button class="sample-text-btn btn btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.8rem;" data-sample="SHOCKING: Doctors HATE This One Weird Trick! Big Pharma doesn't want you to know the miracle cure that was BANNED by the government. WAKE UP sheeple! The mainstream media is lying to you about everything. Do your own research! This secret has been CENSORED across all platforms. URGENT ALERT!!!">
+                        🚨 Fake Sample
+                    </button>
+                    <button class="sample-text-btn btn btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.8rem;" data-sample="According to a new study published in the Journal of Medical Research, researchers at Stanford University have found evidence that regular exercise can reduce the risk of heart disease by up to 30 percent. The peer-reviewed research, which analyzed data from over 50,000 participants over a 10-year period, was conducted by Dr. Sarah Johnson and her team. The findings suggest that moderate physical activity for at least 150 minutes per week is associated with significant cardiovascular benefits.">
+                        ✅ Real Sample
+                    </button>
+                    <button class="sample-text-btn btn btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.8rem;" data-sample="Breaking News: Sources close to the investigation CONFIRM that officials are looking into allegations. The spokesperson stated that documents reveal new information about the case. Witnesses reported seeing activity at the location. According to records obtained through standard procedures, the investigation continues. Experts say this development could have significant implications.">
+                        📰 Neutral Sample
+                    </button>
+                </div>
+            </div>
+
+            <button id="analyze-btn" class="btn btn-primary btn-glow" style="width: 100%; justify-content: center; padding: 1.25rem;">
+                <span>🚀</span> Analyze Article
+            </button>
+        </div>
+
+        <!-- Results Panel -->
+        <div id="results-panel" class="results-panel">
+            <!-- Verdict Card -->
+            <div id="verdict-card" class="verdict-card">
+                <div id="verdict-icon" class="verdict-icon">⚠️</div>
+                <div id="verdict-text" class="verdict-text">FAKE NEWS DETECTED</div>
+                <div style="font-family: var(--font-body); color: var(--text-secondary); margin-bottom: 1rem;">
+                    AI Classification Result
+                </div>
+
+                <div class="confidence-bar">
+                    <div id="confidence-fill" class="confidence-fill fill-fake" style="width: 0%"></div>
+                </div>
+                <div id="confidence-text" style="font-family: var(--font-display); color: var(--neon-cyan); font-size: 1.1rem;">
+                    0% Confidence
+                </div>
+            </div>
+
+            <!-- Metrics Grid -->
+            <div class="metrics-grid">
+                <div class="metric-box">
+                    <div class="metric-label">Sentiment Polarity</div>
+                    <div id="metric-polarity" class="metric-value">+0.00</div>
+                </div>
+                <div class="metric-box">
+                    <div class="metric-label">Subjectivity</div>
+                    <div id="metric-subjectivity" class="metric-value">0.00</div>
+                </div>
+                <div class="metric-box">
+                    <div class="metric-label">Word Count</div>
+                    <div id="metric-words" class="metric-value">0</div>
+                </div>
+                <div class="metric-box">
+                    <div class="metric-label">Trigger Words</div>
+                    <div id="metric-triggers" class="metric-value">0</div>
+                </div>
+            </div>
+
+            <!-- Explanation -->
+            <div class="explanation-box">
+                <h4>🧠 AI EXPLANATION ENGINE</h4>
+                <p id="explanation-text">Analysis will appear here after processing...</p>
+            </div>
+
+            <!-- Keywords -->
+            <div class="glass-card" style="margin-bottom: 2rem;">
+                <h3 style="font-family: var(--font-display); color: var(--neon-cyan); margin-bottom: 1rem; font-size: 1.1rem;">
+                    🔑 Extracted Keywords
+                </h3>
+                <div id="keywords-list" style="min-height: 50px;">
+                    <span style="color: var(--text-muted);">Keywords will be extracted after analysis...</span>
+                </div>
+            </div>
+
+            <!-- Pipeline Trace -->
+            <div class="glass-card">
+                <h3 style="font-family: var(--font-display); color: var(--neon-cyan); margin-bottom: 1.5rem; font-size: 1.1rem;">
+                    📋 NLP Pipeline Trace
+                </h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+                    <div class="metric-box">
+                        <div class="metric-label">Original Length</div>
+                        <div id="trace-original" class="metric-value">0</div>
+                    </div>
+                    <div class="metric-box">
+                        <div class="metric-label">Processed Tokens</div>
+                        <div id="trace-processed" class="metric-value">0</div>
+                    </div>
+                    <div class="metric-box">
+                        <div class="metric-label">Unique Tokens</div>
+                        <div id="trace-tokens" class="metric-value">0</div>
+                    </div>
+                    <div class="metric-box">
+                        <div class="metric-label">Features Extracted</div>
+                        <div id="trace-features" class="metric-value">12</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>Developed by <a href="https://github.com/issu321" target="_blank">issu321</a> | © 2026 Fake News Detection Using NLP</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/detection.js"></script>
+</body>
+</html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | Fake News Detection Project</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="bg-animation"></div>
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+    <canvas id="particle-canvas"></canvas>
+    <div class="scanlines"></div>
+
+    <nav class="navbar">
+        <a href="index.html" class="logo">
+            <span class="logo-icon">🛡️</span>
+            <div>
+                <div class="logo-text">FND-NLP</div>
+                <div class="logo-sub">v2.0 | issu321</div>
+            </div>
+        </a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="detect.html">Detect</a></li>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="models.html">Models</a></li>
+            <li><a href="about.html" class="active">About</a></li>
+        </ul>
+    </nav>
+
+    <div class="detect-container">
+        <div class="detect-header">
+            <h1 style="font-family: var(--font-display); font-size: 2.5rem; color: var(--neon-cyan); text-shadow: 0 0 20px rgba(0, 243, 255, 0.3);">
+                🛡️ About the Project
+            </h1>
+            <p style="color: var(--text-secondary); font-size: 1.1rem;">
+                AI-Powered Misinformation Defense System
+            </p>
+        </div>
+
+        <!-- Vision -->
+        <div class="glass-card" style="margin-bottom: 2rem;">
+            <h2 style="font-family: var(--font-display); color: var(--neon-cyan); margin-bottom: 1rem; font-size: 1.5rem;">
+                🌌 Vision
+            </h2>
+            <p style="color: var(--text-secondary); line-height: 1.8; font-size: 1.05rem; margin-bottom: 1.5rem;">
+                In an era of information overload, distinguishing fact from fiction is paramount. This project deploys a 
+                <strong style="color: var(--neon-cyan);">cyberpunk-themed, AI-driven fake news detection system</strong> that combines modern Natural Language Processing 
+                with robust machine learning to classify news articles in real time.
+            </p>
+            <div style="padding: 1.5rem; background: rgba(0, 243, 255, 0.05); border-left: 3px solid var(--neon-cyan); border-radius: 0 12px 12px 0;">
+                <p style="color: var(--text-secondary); font-style: italic; font-size: 1.1rem;">
+                    "Truth is the first casualty in the war of clicks."
+                </p>
+            </div>
+        </div>
+
+        <!-- Tech Stack -->
+        <div class="glass-card" style="margin-bottom: 2rem;">
+            <h2 style="font-family: var(--font-display); color: var(--neon-cyan); margin-bottom: 1.5rem; font-size: 1.5rem;">
+                🛠️ Technologies Used
+            </h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem;">
+                <div style="padding: 1rem; background: rgba(0,0,0,0.3); border-radius: 12px; border: 1px solid var(--glass-border);">
+                    <div style="color: var(--neon-cyan); font-family: var(--font-display); font-size: 1rem; margin-bottom: 0.5rem;">Python 3.11+</div>
+                    <div style="color: var(--text-secondary); font-size: 0.85rem;">Core programming language</div>
+                </div>
+                <div style="padding: 1rem; background: rgba(0,0,0,0.3); border-radius: 12px; border: 1px solid var(--glass-border);">
+                    <div style="color: var(--neon-cyan); font-family: var(--font-display); font-size: 1rem; margin-bottom: 0.5rem;">Streamlit</div>
+                    <div style="color: var(--text-secondary); font-size: 0.85rem;">Frontend framework</div>
+                </div>
+                <div style="padding: 1rem; background: rgba(0,0,0,0.3); border-radius: 12px; border: 1px solid var(--glass-border);">
+                    <div style="color: var(--neon-cyan); font-family: var(--font-display); font-size: 1rem; margin-bottom: 0.5rem;">scikit-learn</div>
+                    <div style="color: var(--text-secondary); font-size: 0.85rem;">Machine learning toolkit</div>
+                </div>
+                <div style="padding: 1rem; background: rgba(0,0,0,0.3); border-radius: 12px; border: 1px solid var(--glass-border);">
+                    <div style="color: var(--neon-cyan); font-family: var(--font-display); font-size: 1rem; margin-bottom: 0.5rem;">NLTK</div>
+                    <div style="color: var(--text-secondary); font-size: 0.85rem;">Tokenization, stemming, stopwords</div>
+                </div>
+                <div style="padding: 1rem; background: rgba(0,0,0,0.3); border-radius: 12px; border: 1px solid var(--glass-border);">
+                    <div style="color: var(--neon-cyan); font-family: var(--font-display); font-size: 1rem; margin-bottom: 0.5rem;">TextBlob</div>
+                    <div style="color: var(--text-secondary); font-size: 0.85rem;">Sentiment polarity analysis</div>
+                </div>
+                <div style="padding: 1rem; background: rgba(0,0,0,0.3); border-radius: 12px; border: 1px solid var(--glass-border);">
+                    <div style="color: var(--neon-cyan); font-family: var(--font-display); font-size: 1rem; margin-bottom: 0.5rem;">Plotly</div>
+                    <div style="color: var(--text-secondary); font-size: 0.85rem;">Interactive visualizations</div>
+                </div>
+                <div style="padding: 1rem; background: rgba(0,0,0,0.3); border-radius: 12px; border: 1px solid var(--glass-border);">
+                    <div style="color: var(--neon-cyan); font-family: var(--font-display); font-size: 1rem; margin-bottom: 0.5rem;">joblib</div>
+                    <div style="color: var(--text-secondary); font-size: 0.85rem;">Model serialization</div>
+                </div>
+                <div style="padding: 1rem; background: rgba(0,0,0,0.3); border-radius: 12px; border: 1px solid var(--glass-border);">
+                    <div style="color: var(--neon-cyan); font-family: var(--font-display); font-size: 1rem; margin-bottom: 0.5rem;">pandas / numpy</div>
+                    <div style="color: var(--text-secondary); font-size: 0.85rem;">Data processing</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Future Roadmap -->
+        <div class="glass-card" style="margin-bottom: 2rem;">
+            <h2 style="font-family: var(--font-display); color: var(--neon-cyan); margin-bottom: 1.5rem; font-size: 1.5rem;">
+                🔮 Future Roadmap
+            </h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem;">
+                <div style="padding: 1.25rem; background: rgba(0,0,0,0.3); border-radius: 12px; border: 1px solid var(--glass-border); display: flex; align-items: center; gap: 1rem;">
+                    <span style="font-size: 1.5rem;">🧠</span>
+                    <div>
+                        <div style="color: var(--text-primary); font-weight: 600;">Deep Learning Integration</div>
+                        <div style="color: var(--text-secondary); font-size: 0.85rem;">LSTM / BERT architectures</div>
+                    </div>
+                </div>
+                <div style="padding: 1.25rem; background: rgba(0,0,0,0.3); border-radius: 12px; border: 1px solid var(--glass-border); display: flex; align-items: center; gap: 1rem;">
+                    <span style="font-size: 1.5rem;">🔌</span>
+                    <div>
+                        <div style="color: var(--text-primary); font-weight: 600;">Chrome Extension</div>
+                        <div style="color: var(--text-secondary); font-size: 0.85rem;">On-page detection in browser</div>
+                    </div>
+                </div>
+                <div style="padding: 1.25rem; background: rgba(0,0,0,0.3); border-radius: 12px; border: 1px solid var(--glass-border); display: flex; align-items: center; gap: 1rem;">
+                    <span style="font-size: 1.5rem;">⚡</span>
+                    <div>
+                        <div style="color: var(--text-primary); font-weight: 600;">REST API with FastAPI</div>
+                        <div style="color: var(--text-secondary); font-size: 0.85rem;">Production deployment ready</div>
+                    </div>
+                </div>
+                <div style="padding: 1.25rem; background: rgba(0,0,0,0.3); border-radius: 12px; border: 1px solid var(--glass-border); display: flex; align-items: center; gap: 1rem;">
+                    <span style="font-size: 1.5rem;">🌍</span>
+                    <div>
+                        <div style="color: var(--text-primary); font-weight: 600;">Multi-Language Support</div>
+                        <div style="color: var(--text-secondary); font-size: 0.85rem;">Global misinformation defense</div>
+                    </div>
+                </div>
+                <div style="padding: 1.25rem; background: rgba(0,0,0,0.3); border-radius: 12px; border: 1px solid var(--glass-border); display: flex; align-items: center; gap: 1rem;">
+                    <span style="font-size: 1.5rem;">📡</span>
+                    <div>
+                        <div style="color: var(--text-primary); font-weight: 600;">Real-Time News Feed</div>
+                        <div style="color: var(--text-secondary); font-size: 0.85rem;">Live monitoring pipeline</div>
+                    </div>
+                </div>
+                <div style="padding: 1.25rem; background: rgba(0,0,0,0.3); border-radius: 12px; border: 1px solid var(--glass-border); display: flex; align-items: center; gap: 1rem;">
+                    <span style="font-size: 1.5rem;">🔍</span>
+                    <div>
+                        <div style="color: var(--text-primary); font-weight: 600;">Explainable AI with SHAP</div>
+                        <div style="color: var(--text-secondary); font-size: 0.85rem;">Feature importance visualization</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Developer -->
+        <div class="glass-card" style="text-align: center; margin-bottom: 2rem;">
+            <h2 style="font-family: var(--font-display); color: var(--neon-cyan); margin-bottom: 1.5rem; font-size: 1.5rem;">
+                👨‍💻 Developer
+            </h2>
+            <div style="width: 100px; height: 100px; margin: 0 auto 1.5rem; border-radius: 50%; background: linear-gradient(135deg, var(--neon-cyan), var(--neon-purple)); display: flex; align-items: center; justify-content: center; font-size: 3rem; box-shadow: 0 0 30px rgba(0, 243, 255, 0.3);">
+                🧑‍💻
+            </div>
+            <h3 style="font-family: var(--font-display); color: var(--text-primary); font-size: 1.3rem; margin-bottom: 0.5rem;">Ussu</h3>
+            <p style="color: var(--text-secondary); margin-bottom: 1rem;">AI & Machine Learning Engineer</p>
+            <a href="https://github.com/issu321" target="_blank" class="btn btn-secondary" style="display: inline-flex;">
+                <span>🔗</span> Github-Profile
+            </a>
+             <a href="https://github.com/issu321/Fake-News-Detection-Using-NLP" target="_blank" class="btn btn-secondary" style="display: inline-flex;">
+                <span>🔗</span> View-Repository
+            </a>
+        </div>
+
+        <!-- License -->
+        <div class="glass-card" style="text-align: center;">
+            <h2 style="font-family: var(--font-display); color: var(--neon-cyan); margin-bottom: 1rem; font-size: 1.3rem;">
+                📜 License
+            </h2>
+            <p style="color: var(--text-secondary); line-height: 1.8;">
+                This project is released under the <strong style="color: var(--neon-cyan);">MIT License</strong> for educational and portfolio purposes.
+                <br>Contributions are welcome! Please fork the repository and submit a pull request.
+            </p>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>Developed by <a href="https://github.com/issu321" target="_blank">issu321</a> | © 2026 Fake News Detection Using NLP</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

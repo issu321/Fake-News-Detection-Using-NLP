@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | Fake News Detection Analytics</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="bg-animation"></div>
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+    <canvas id="particle-canvas"></canvas>
+    <div class="scanlines"></div>
+
+    <nav class="navbar">
+        <a href="index.html" class="logo">
+            <span class="logo-icon">🛡️</span>
+            <div>
+                <div class="logo-text">FND-NLP</div>
+                <div class="logo-sub">v2.0 | issu321</div>
+            </div>
+        </a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="detect.html">Detect</a></li>
+            <li><a href="dashboard.html" class="active">Dashboard</a></li>
+            <li><a href="models.html">Models</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+    </nav>
+
+    <div class="detect-container">
+        <div class="detect-header">
+            <h1 style="font-family: var(--font-display); font-size: 2.5rem; color: var(--neon-cyan); text-shadow: 0 0 20px rgba(0, 243, 255, 0.3);">
+                📊 Analytics Dashboard
+            </h1>
+            <p style="color: var(--text-secondary); font-size: 1.1rem;">
+                Dataset distributions, model performance, and keyword analytics
+            </p>
+        </div>
+
+        <!-- Stats Row -->
+        <div class="metrics-grid" style="margin-bottom: 2rem;">
+            <div class="metric-box">
+                <div class="metric-label">Total Articles</div>
+                <div class="metric-value">100</div>
+            </div>
+            <div class="metric-box">
+                <div class="metric-label">Fake Articles</div>
+                <div class="metric-value" style="color: var(--neon-pink);">50</div>
+            </div>
+            <div class="metric-box">
+                <div class="metric-label">Real Articles</div>
+                <div class="metric-value" style="color: var(--neon-green);">50</div>
+            </div>
+            <div class="metric-box">
+                <div class="metric-label">Best F1 Score</div>
+                <div class="metric-value" style="color: var(--neon-orange);">0.924</div>
+            </div>
+        </div>
+
+        <!-- Charts Row -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 2rem; margin-bottom: 2rem;">
+            <div class="glass-card">
+                <h3 style="font-family: var(--font-display); color: var(--neon-cyan); margin-bottom: 1.5rem; font-size: 1.1rem;">
+                    📈 Label Distribution
+                </h3>
+                <div class="chart-container" style="height: 300px;">
+                    <svg viewBox="0 0 400 300" style="width: 100%; height: 100%;">
+                        <!-- Donut Chart -->
+                        <circle cx="200" cy="150" r="80" fill="none" stroke="rgba(255,0,85,0.8)" stroke-width="40" 
+                            stroke-dasharray="251.2 251.2" stroke-dashoffset="0" transform="rotate(-90 200 150)"/>
+                        <circle cx="200" cy="150" r="80" fill="none" stroke="rgba(0,255,157,0.8)" stroke-width="40" 
+                            stroke-dasharray="251.2 251.2" stroke-dashoffset="125.6" transform="rotate(-90 200 150)"/>
+                        <text x="200" y="145" text-anchor="middle" fill="#e6f1ff" font-family="Orbitron" font-size="24" font-weight="700">50/50</text>
+                        <text x="200" y="170" text-anchor="middle" fill="#8b949e" font-family="Rajdhani" font-size="14">Balanced Dataset</text>
+
+                        <!-- Legend -->
+                        <rect x="120" y="240" width="15" height="15" fill="#ff0055" rx="3"/>
+                        <text x="145" y="252" fill="#8b949e" font-family="Rajdhani" font-size="14">Fake (50%)</text>
+                        <rect x="220" y="240" width="15" height="15" fill="#00ff9d" rx="3"/>
+                        <text x="245" y="252" fill="#8b949e" font-family="Rajdhani" font-size="14">Real (50%)</text>
+                    </svg>
+                </div>
+            </div>
+
+            <div class="glass-card">
+                <h3 style="font-family: var(--font-display); color: var(--neon-cyan); margin-bottom: 1.5rem; font-size: 1.1rem;">
+                    🎯 Model Performance
+                </h3>
+                <div class="chart-container" style="height: 300px;">
+                    <svg viewBox="0 0 400 300" style="width: 100%; height: 100%;">
+                        <!-- Bars -->
+                        <rect x="50" y="120" width="60" height="130" fill="rgba(0,243,255,0.6)" rx="4"/>
+                        <rect x="130" y="100" width="60" height="150" fill="rgba(255,0,170,0.6)" rx="4"/>
+                        <rect x="210" y="140" width="60" height="110" fill="rgba(0,243,255,0.6)" rx="4"/>
+                        <rect x="290" y="90" width="60" height="160" fill="rgba(255,0,170,0.6)" rx="4"/>
+
+                        <rect x="50" y="80" width="60" height="170" fill="rgba(0,243,255,0.3)" rx="4"/>
+                        <rect x="130" y="60" width="60" height="190" fill="rgba(255,0,170,0.3)" rx="4"/>
+                        <rect x="210" y="100" width="60" height="150" fill="rgba(0,243,255,0.3)" rx="4"/>
+
+                        <!-- Labels -->
+                        <text x="80" y="270" text-anchor="middle" fill="#8b949e" font-family="Rajdhani" font-size="12">LR</text>
+                        <text x="160" y="270" text-anchor="middle" fill="#8b949e" font-family="Rajdhani" font-size="12">RF</text>
+                        <text x="240" y="270" text-anchor="middle" fill="#8b949e" font-family="Rajdhani" font-size="12">NB</text>
+                        <text x="320" y="270" text-anchor="middle" fill="#8b949e" font-family="Rajdhani" font-size="12">Best</text>
+
+                        <text x="80" y="70" text-anchor="middle" fill="#00f3ff" font-family="Orbitron" font-size="11">0.91</text>
+                        <text x="160" y="50" text-anchor="middle" fill="#ff00aa" font-family="Orbitron" font-size="11">0.92</text>
+                        <text x="240" y="90" text-anchor="middle" fill="#00f3ff" font-family="Orbitron" font-size="11">0.89</text>
+
+                        <!-- Legend -->
+                        <rect x="120" y="20" width="12" height="12" fill="#00f3ff" rx="2" opacity="0.6"/>
+                        <text x="140" y="30" fill="#8b949e" font-family="Rajdhani" font-size="12">Accuracy</text>
+                        <rect x="220" y="20" width="12" height="12" fill="#ff00aa" rx="2" opacity="0.6"/>
+                        <text x="240" y="30" fill="#8b949e" font-family="Rajdhani" font-size="12">F1 Score</text>
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <!-- Keywords Section -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 2rem;">
+            <div class="glass-card">
+                <h3 style="font-family: var(--font-display); color: var(--neon-pink); margin-bottom: 1.5rem; font-size: 1.1rem;">
+                    🔑 Fake News Keywords
+                </h3>
+                <div class="chart-container" style="height: 350px; flex-direction: column; gap: 0.5rem; align-items: stretch;">
+                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                        <span style="width: 80px; color: var(--text-secondary); font-size: 0.85rem;">shock</span>
+                        <div style="flex: 1; height: 20px; background: rgba(255,0,85,0.2); border-radius: 10px; overflow: hidden;">
+                            <div style="width: 95%; height: 100%; background: linear-gradient(90deg, #ff0055, #ff5599); border-radius: 10px;"></div>
+                        </div>
+                        <span style="width: 30px; color: var(--neon-pink); font-family: Orbitron; font-size: 0.8rem;">24</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                        <span style="width: 80px; color: var(--text-secondary); font-size: 0.85rem;">bann</span>
+                        <div style="flex: 1; height: 20px; background: rgba(255,0,85,0.2); border-radius: 10px; overflow: hidden;">
+                            <div style="width: 85%; height: 100%; background: linear-gradient(90deg, #ff0055, #ff5599); border-radius: 10px;"></div>
+                        </div>
+                        <span style="width: 30px; color: var(--neon-pink); font-family: Orbitron; font-size: 0.8rem;">21</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                        <span style="width: 80px; color: var(--text-secondary); font-size: 0.85rem;">govern</span>
+                        <div style="flex: 1; height: 20px; background: rgba(255,0,85,0.2); border-radius: 10px; overflow: hidden;">
+                            <div style="width: 75%; height: 100%; background: linear-gradient(90deg, #ff0055, #ff5599); border-radius: 10px;"></div>
+                        </div>
+                        <span style="width: 30px; color: var(--neon-pink); font-family: Orbitron; font-size: 0.8rem;">18</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                        <span style="width: 80px; color: var(--text-secondary); font-size: 0.85rem;">media</span>
+                        <div style="flex: 1; height: 20px; background: rgba(255,0,85,0.2); border-radius: 10px; overflow: hidden;">
+                            <div style="width: 65%; height: 100%; background: linear-gradient(90deg, #ff0055, #ff5599); border-radius: 10px;"></div>
+                        </div>
+                        <span style="width: 30px; color: var(--neon-pink); font-family: Orbitron; font-size: 0.8rem;">16</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                        <span style="width: 80px; color: var(--text-secondary); font-size: 0.85rem;">lie</span>
+                        <div style="flex: 1; height: 20px; background: rgba(255,0,85,0.2); border-radius: 10px; overflow: hidden;">
+                            <div style="width: 55%; height: 100%; background: linear-gradient(90deg, #ff0055, #ff5599); border-radius: 10px;"></div>
+                        </div>
+                        <span style="width: 30px; color: var(--neon-pink); font-family: Orbitron; font-size: 0.8rem;">14</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                        <span style="width: 80px; color: var(--text-secondary); font-size: 0.85rem;">secret</span>
+                        <div style="flex: 1; height: 20px; background: rgba(255,0,85,0.2); border-radius: 10px; overflow: hidden;">
+                            <div style="width: 50%; height: 100%; background: linear-gradient(90deg, #ff0055, #ff5599); border-radius: 10px;"></div>
+                        </div>
+                        <span style="width: 30px; color: var(--neon-pink); font-family: Orbitron; font-size: 0.8rem;">13</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                        <span style="width: 80px; color: var(--text-secondary); font-size: 0.85rem;">conspir</span>
+                        <div style="flex: 1; height: 20px; background: rgba(255,0,85,0.2); border-radius: 10px; overflow: hidden;">
+                            <div style="width: 45%; height: 100%; background: linear-gradient(90deg, #ff0055, #ff5599); border-radius: 10px;"></div>
+                        </div>
+                        <span style="width: 30px; color: var(--neon-pink); font-family: Orbitron; font-size: 0.8rem;">12</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                        <span style="width: 80px; color: var(--text-secondary); font-size: 0.85rem;">hoax</span>
+                        <div style="flex: 1; height: 20px; background: rgba(255,0,85,0.2); border-radius: 10px; overflow: hidden;">
+                            <div style="width: 40%; height: 100%; background: linear-gradient(90deg, #ff0055, #ff5599); border-radius: 10px;"></div>
+                        </div>
+                        <span style="width: 30px; color: var(--neon-pink); font-family: Orbitron; font-size: 0.8rem;">10</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="glass-card">
+                <h3 style="font-family: var(--font-display); color: var(--neon-green); margin-bottom: 1.5rem; font-size: 1.1rem;">
+                    🔑 Real News Keywords
+                </h3>
+                <div class="chart-container" style="height: 350px; flex-direction: column; gap: 0.5rem; align-items: stretch;">
+                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                        <span style="width: 80px; color: var(--text-secondary); font-size: 0.85rem;">studi</span>
+                        <div style="flex: 1; height: 20px; background: rgba(0,255,157,0.2); border-radius: 10px; overflow: hidden;">
+                            <div style="width: 95%; height: 100%; background: linear-gradient(90deg, #00ff9d, #55ffbb); border-radius: 10px;"></div>
+                        </div>
+                        <span style="width: 30px; color: var(--neon-green); font-family: Orbitron; font-size: 0.8rem;">28</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                        <span style="width: 80px; color: var(--text-secondary); font-size: 0.85rem;">research</span>
+                        <div style="flex: 1; height: 20px; background: rgba(0,255,157,0.2); border-radius: 10px; overflow: hidden;">
+                            <div style="width: 85%; height: 100%; background: linear-gradient(90deg, #00ff9d, #55ffbb); border-radius: 10px;"></div>
+                        </div>
+                        <span style="width: 30px; color: var(--neon-green); font-family: Orbitron; font-size: 0.8rem;">25</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                        <span style="width: 80px; color: var(--text-secondary); font-size: 0.85rem;">accord</span>
+                        <div style="flex: 1; height: 20px; background: rgba(0,255,157,0.2); border-radius: 10px; overflow: hidden;">
+                            <div style="width: 75%; height: 100%; background: linear-gradient(90deg, #00ff9d, #55ffbb); border-radius: 10px;"></div>
+                        </div>
+                        <span style="width: 30px; color: var(--neon-green); font-family: Orbitron; font-size: 0.8rem;">22</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                        <span style="width: 80px; color: var(--text-secondary); font-size: 0.85rem;">offici</span>
+                        <div style="flex: 1; height: 20px; background: rgba(0,255,157,0.2); border-radius: 10px; overflow: hidden;">
+                            <div style="width: 65%; height: 100%; background: linear-gradient(90deg, #00ff9d, #55ffbb); border-radius: 10px;"></div>
+                        </div>
+                        <span style="width: 30px; color: var(--neon-green); font-family: Orbitron; font-size: 0.8rem;">19</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                        <span style="width: 80px; color: var(--text-secondary); font-size: 0.85rem;">report</span>
+                        <div style="flex: 1; height: 20px; background: rgba(0,255,157,0.2); border-radius: 10px; overflow: hidden;">
+                            <div style="width: 60%; height: 100%; background: linear-gradient(90deg, #00ff9d, #55ffbb); border-radius: 10px;"></div>
+                        </div>
+                        <span style="width: 30px; color: var(--neon-green); font-family: Orbitron; font-size: 0.8rem;">17</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                        <span style="width: 80px; color: var(--text-secondary); font-size: 0.85rem;">sourc</span>
+                        <div style="flex: 1; height: 20px; background: rgba(0,255,157,0.2); border-radius: 10px; overflow: hidden;">
+                            <div style="width: 55%; height: 100%; background: linear-gradient(90deg, #00ff9d, #55ffbb); border-radius: 10px;"></div>
+                        </div>
+                        <span style="width: 30px; color: var(--neon-green); font-family: Orbitron; font-size: 0.8rem;">15</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                        <span style="width: 80px; color: var(--text-secondary); font-size: 0.85rem;">data</span>
+                        <div style="flex: 1; height: 20px; background: rgba(0,255,157,0.2); border-radius: 10px; overflow: hidden;">
+                            <div style="width: 50%; height: 100%; background: linear-gradient(90deg, #00ff9d, #55ffbb); border-radius: 10px;"></div>
+                        </div>
+                        <span style="width: 30px; color: var(--neon-green); font-family: Orbitron; font-size: 0.8rem;">14</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                        <span style="width: 80px; color: var(--text-secondary); font-size: 0.85rem;">univers</span>
+                        <div style="flex: 1; height: 20px; background: rgba(0,255,157,0.2); border-radius: 10px; overflow: hidden;">
+                            <div style="width: 45%; height: 100%; background: linear-gradient(90deg, #00ff9d, #55ffbb); border-radius: 10px;"></div>
+                        </div>
+                        <span style="width: 30px; color: var(--neon-green); font-family: Orbitron; font-size: 0.8rem;">12</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>Developed by <a href="https://github.com/issu321" target="_blank">issu321</a> | © 2026 Fake News Detection Using NLP</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

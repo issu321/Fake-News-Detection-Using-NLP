@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Models | Fake News Detection Benchmarks</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="bg-animation"></div>
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+    <canvas id="particle-canvas"></canvas>
+    <div class="scanlines"></div>
+
+    <nav class="navbar">
+        <a href="index.html" class="logo">
+            <span class="logo-icon">🛡️</span>
+            <div>
+                <div class="logo-text">FND-NLP</div>
+                <div class="logo-sub">v2.0 | issu321</div>
+            </div>
+        </a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="detect.html">Detect</a></li>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="models.html" class="active">Models</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+    </nav>
+
+    <div class="detect-container">
+        <div class="detect-header">
+            <h1 style="font-family: var(--font-display); font-size: 2.5rem; color: var(--neon-cyan); text-shadow: 0 0 20px rgba(0, 243, 255, 0.3);">
+                🤖 Model Benchmarks
+            </h1>
+            <p style="color: var(--text-secondary); font-size: 1.1rem;">
+                Performance comparison of ensemble machine learning classifiers
+            </p>
+        </div>
+
+        <div class="model-grid">
+            <!-- Logistic Regression -->
+            <div class="glass-card tilt-card">
+                <div class="tilt-content">
+                    <h3>📦 Logistic Regression</h3>
+                    <p style="color: var(--text-secondary); margin-bottom: 1.5rem; font-size: 0.9rem;">
+                        Baseline linear classifier. Fast, interpretable coefficients with L2 regularization.
+                    </p>
+                    <div class="model-metrics">
+                        <div class="model-metric">
+                            <div class="model-metric-label">Accuracy</div>
+                            <div class="model-metric-value" style="color: var(--neon-cyan);">0.9100</div>
+                        </div>
+                        <div class="model-metric">
+                            <div class="model-metric-label">Precision</div>
+                            <div class="model-metric-value" style="color: var(--neon-green);">0.8929</div>
+                        </div>
+                        <div class="model-metric">
+                            <div class="model-metric-label">Recall</div>
+                            <div class="model-metric-value" style="color: var(--neon-orange);">0.9259</div>
+                        </div>
+                        <div class="model-metric">
+                            <div class="model-metric-label">F1 Score</div>
+                            <div class="model-metric-value" style="color: var(--neon-pink);">0.9091</div>
+                        </div>
+                    </div>
+                    <div style="margin-top: 1rem;">
+                        <h4 style="font-family: var(--font-display); color: var(--neon-cyan); font-size: 0.9rem; margin-bottom: 0.75rem;">
+                            Confusion Matrix
+                        </h4>
+                        <svg viewBox="0 0 200 160" style="width: 100%; max-width: 300px; margin: 0 auto; display: block;">
+                            <rect x="10" y="10" width="90" height="70" fill="rgba(0,243,255,0.3)" stroke="rgba(0,243,255,0.5)" rx="4"/>
+                            <rect x="100" y="10" width="90" height="70" fill="rgba(255,0,85,0.15)" stroke="rgba(255,0,85,0.3)" rx="4"/>
+                            <rect x="10" y="80" width="90" height="70" fill="rgba(255,0,85,0.15)" stroke="rgba(255,0,85,0.3)" rx="4"/>
+                            <rect x="100" y="80" width="90" height="70" fill="rgba(0,255,157,0.3)" stroke="rgba(0,255,157,0.5)" rx="4"/>
+                            <text x="55" y="50" text-anchor="middle" fill="#00f3ff" font-family="Orbitron" font-size="18" font-weight="700">23</text>
+                            <text x="145" y="50" text-anchor="middle" fill="#ff0055" font-family="Orbitron" font-size="18" font-weight="700">2</text>
+                            <text x="55" y="120" text-anchor="middle" fill="#ff0055" font-family="Orbitron" font-size="18" font-weight="700">3</text>
+                            <text x="145" y="120" text-anchor="middle" fill="#00ff9d" font-family="Orbitron" font-size="18" font-weight="700">22</text>
+                            <text x="55" y="155" text-anchor="middle" fill="#8b949e" font-family="Rajdhani" font-size="11">fake</text>
+                            <text x="145" y="155" text-anchor="middle" fill="#8b949e" font-family="Rajdhani" font-size="11">real</text>
+                            <text x="5" y="50" text-anchor="end" fill="#8b949e" font-family="Rajdhani" font-size="11" transform="rotate(-90 5 50)">fake</text>
+                            <text x="5" y="120" text-anchor="end" fill="#8b949e" font-family="Rajdhani" font-size="11" transform="rotate(-90 5 120)">real</text>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Random Forest -->
+            <div class="glass-card tilt-card" style="border-color: rgba(255, 170, 0, 0.3);">
+                <div class="tilt-content">
+                    <div style="position: absolute; top: 1rem; right: 1rem; background: rgba(255,170,0,0.2); border: 1px solid var(--neon-orange); border-radius: 20px; padding: 0.25rem 0.75rem; font-family: var(--font-display); font-size: 0.7rem; color: var(--neon-orange);">
+                        ⭐ BEST MODEL
+                    </div>
+                    <h3 style="margin-top: 0.5rem;">📦 Random Forest</h3>
+                    <p style="color: var(--text-secondary); margin-bottom: 1.5rem; font-size: 0.9rem;">
+                        Ensemble tree classifier with 200 estimators. Handles non-linear patterns robustly.
+                    </p>
+                    <div class="model-metrics">
+                        <div class="model-metric">
+                            <div class="model-metric-label">Accuracy</div>
+                            <div class="model-metric-value" style="color: var(--neon-cyan);">0.9200</div>
+                        </div>
+                        <div class="model-metric">
+                            <div class="model-metric-label">Precision</div>
+                            <div class="model-metric-value" style="color: var(--neon-green);">0.9038</div>
+                        </div>
+                        <div class="model-metric">
+                            <div class="model-metric-label">Recall</div>
+                            <div class="model-metric-value" style="color: var(--neon-orange);">0.9394</div>
+                        </div>
+                        <div class="model-metric">
+                            <div class="model-metric-label">F1 Score</div>
+                            <div class="model-metric-value" style="color: var(--neon-pink);">0.9213</div>
+                        </div>
+                    </div>
+                    <div style="margin-top: 1rem;">
+                        <h4 style="font-family: var(--font-display); color: var(--neon-cyan); font-size: 0.9rem; margin-bottom: 0.75rem;">
+                            Confusion Matrix
+                        </h4>
+                        <svg viewBox="0 0 200 160" style="width: 100%; max-width: 300px; margin: 0 auto; display: block;">
+                            <rect x="10" y="10" width="90" height="70" fill="rgba(0,243,255,0.3)" stroke="rgba(0,243,255,0.5)" rx="4"/>
+                            <rect x="100" y="10" width="90" height="70" fill="rgba(255,0,85,0.15)" stroke="rgba(255,0,85,0.3)" rx="4"/>
+                            <rect x="10" y="80" width="90" height="70" fill="rgba(255,0,85,0.15)" stroke="rgba(255,0,85,0.3)" rx="4"/>
+                            <rect x="100" y="80" width="90" height="70" fill="rgba(0,255,157,0.3)" stroke="rgba(0,255,157,0.5)" rx="4"/>
+                            <text x="55" y="50" text-anchor="middle" fill="#00f3ff" font-family="Orbitron" font-size="18" font-weight="700">24</text>
+                            <text x="145" y="50" text-anchor="middle" fill="#ff0055" font-family="Orbitron" font-size="18" font-weight="700">1</text>
+                            <text x="55" y="120" text-anchor="middle" fill="#ff0055" font-family="Orbitron" font-size="18" font-weight="700">2</text>
+                            <text x="145" y="120" text-anchor="middle" fill="#00ff9d" font-family="Orbitron" font-size="18" font-weight="700">23</text>
+                            <text x="55" y="155" text-anchor="middle" fill="#8b949e" font-family="Rajdhani" font-size="11">fake</text>
+                            <text x="145" y="155" text-anchor="middle" fill="#8b949e" font-family="Rajdhani" font-size="11">real</text>
+                            <text x="5" y="50" text-anchor="end" fill="#8b949e" font-family="Rajdhani" font-size="11" transform="rotate(-90 5 50)">fake</text>
+                            <text x="5" y="120" text-anchor="end" fill="#8b949e" font-family="Rajdhani" font-size="11" transform="rotate(-90 5 120)">real</text>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Multinomial Naive Bayes -->
+            <div class="glass-card tilt-card">
+                <div class="tilt-content">
+                    <h3>📦 Multinomial Naive Bayes</h3>
+                    <p style="color: var(--text-secondary); margin-bottom: 1.5rem; font-size: 0.9rem;">
+                        Probabilistic classifier with alpha smoothing. Excellent for text, low variance.
+                    </p>
+                    <div class="model-metrics">
+                        <div class="model-metric">
+                            <div class="model-metric-label">Accuracy</div>
+                            <div class="model-metric-value" style="color: var(--neon-cyan);">0.8800</div>
+                        </div>
+                        <div class="model-metric">
+                            <div class="model-metric-label">Precision</div>
+                            <div class="model-metric-value" style="color: var(--neon-green);">0.8621</div>
+                        </div>
+                        <div class="model-metric">
+                            <div class="model-metric-label">Recall</div>
+                            <div class="model-metric-value" style="color: var(--neon-orange);">0.8929</div>
+                        </div>
+                        <div class="model-metric">
+                            <div class="model-metric-label">F1 Score</div>
+                            <div class="model-metric-value" style="color: var(--neon-pink);">0.8772</div>
+                        </div>
+                    </div>
+                    <div style="margin-top: 1rem;">
+                        <h4 style="font-family: var(--font-display); color: var(--neon-cyan); font-size: 0.9rem; margin-bottom: 0.75rem;">
+                            Confusion Matrix
+                        </h4>
+                        <svg viewBox="0 0 200 160" style="width: 100%; max-width: 300px; margin: 0 auto; display: block;">
+                            <rect x="10" y="10" width="90" height="70" fill="rgba(0,243,255,0.3)" stroke="rgba(0,243,255,0.5)" rx="4"/>
+                            <rect x="100" y="10" width="90" height="70" fill="rgba(255,0,85,0.15)" stroke="rgba(255,0,85,0.3)" rx="4"/>
+                            <rect x="10" y="80" width="90" height="70" fill="rgba(255,0,85,0.15)" stroke="rgba(255,0,85,0.3)" rx="4"/>
+                            <rect x="100" y="80" width="90" height="70" fill="rgba(0,255,157,0.3)" stroke="rgba(0,255,157,0.5)" rx="4"/>
+                            <text x="55" y="50" text-anchor="middle" fill="#00f3ff" font-family="Orbitron" font-size="18" font-weight="700">21</text>
+                            <text x="145" y="50" text-anchor="middle" fill="#ff0055" font-family="Orbitron" font-size="18" font-weight="700">4</text>
+                            <text x="55" y="120" text-anchor="middle" fill="#ff0055" font-family="Orbitron" font-size="18" font-weight="700">3</text>
+                            <text x="145" y="120" text-anchor="middle" fill="#00ff9d" font-family="Orbitron" font-size="18" font-weight="700">22</text>
+                            <text x="55" y="155" text-anchor="middle" fill="#8b949e" font-family="Rajdhani" font-size="11">fake</text>
+                            <text x="145" y="155" text-anchor="middle" fill="#8b949e" font-family="Rajdhani" font-size="11">real</text>
+                            <text x="5" y="50" text-anchor="end" fill="#8b949e" font-family="Rajdhani" font-size="11" transform="rotate(-90 5 50)">fake</text>
+                            <text x="5" y="120" text-anchor="end" fill="#8b949e" font-family="Rajdhani" font-size="11" transform="rotate(-90 5 120)">real</text>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Model Selection Info -->
+        <div class="glass-card" style="margin-top: 2rem;">
+            <h3 style="font-family: var(--font-display); color: var(--neon-cyan); margin-bottom: 1rem; font-size: 1.2rem;">
+                🏆 Auto-Selection Logic
+            </h3>
+            <p style="color: var(--text-secondary); line-height: 1.8; margin-bottom: 1.5rem;">
+                The system automatically selects the best model by F1-score after training on the dataset. 
+                The winning model is serialized with <code style="background: rgba(0,243,255,0.1); padding: 0.2rem 0.5rem; border-radius: 4px; color: var(--neon-cyan);">joblib</code> 
+                for instant inference during detection. Currently, <strong style="color: var(--neon-orange);">Random Forest</strong> is the active model with the highest F1 score of <strong style="color: var(--neon-orange);">0.9213</strong>.
+            </p>
+            <div class="terminal">
+                <div class="terminal-content">
+                    <div><span class="terminal-prompt">$</span> <span class="terminal-command">best_name = max(results, key=lambda x: results[x]['f1'])</span></div>
+                    <div><span class="terminal-prompt">$</span> <span class="terminal-command">best_model = trained_models[best_name]</span></div>
+                    <div><span class="terminal-prompt">$</span> <span class="terminal-command">joblib.dump((best_model, tfidf), 'best_model.pkl')</span></div>
+                    <div style="margin-top: 0.5rem; color: var(--neon-green);">✓ Best model saved: Random Forest (F1: 0.9213)</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>Developed by <a href="https://github.com/issu321" target="_blank">issu321</a> | © 2026 Fake News Detection Using NLP</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

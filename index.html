@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fake News Detection | AI-Powered NLP System</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Background Effects -->
+    <div class="bg-animation"></div>
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+    <canvas id="particle-canvas"></canvas>
+    <div class="scanlines"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <a href="index.html" class="logo">
+            <span class="logo-icon">🛡️</span>
+            <div>
+                <div class="logo-text">FND-NLP</div>
+                <div class="logo-sub">v2.0 | issu321</div>
+            </div>
+        </a>
+        <ul class="nav-links">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="detect.html">Detect</a></li>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="models.html">Models</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span>●</span> AI-Powered Misinformation Defense System
+            </div>
+            <h1>FAKE NEWS<br>DETECTION</h1>
+            <p class="hero-subtitle typing-effect" data-text="Advanced Natural Language Processing meets Machine Learning to identify misinformation in real-time." data-speed="30"></p>
+
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <div class="stat-value" data-count="100">0</div>
+                    <div class="stat-label">Articles Analyzed</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value" data-count="3">0</div>
+                    <div class="stat-label">ML Models Active</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value" data-count="92">0</div>
+                    <div class="stat-label">% Accuracy Rate</div>
+                </div>
+            </div>
+
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <a href="detect.html" class="btn btn-primary btn-glow">
+                    <span>🔍</span> Start Detection
+                </a>
+                <a href="about.html" class="btn btn-secondary">
+                    <span>📖</span> Learn More
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="section">
+        <h2 class="section-title">System Capabilities</h2>
+        <p class="section-subtitle">Powered by cutting-edge NLP pipelines and ensemble machine learning architecture.</p>
+
+        <div class="features-grid">
+            <div class="glass-card tilt-card">
+                <div class="tilt-content">
+                    <span class="feature-icon">🔍</span>
+                    <h3>Real-Time Detection</h3>
+                    <p>Instant classification of news articles using advanced NLP pipelines with TF-IDF vectorization and ensemble models.</p>
+                </div>
+            </div>
+
+            <div class="glass-card tilt-card">
+                <div class="tilt-content">
+                    <span class="feature-icon">📊</span>
+                    <h3>Model Comparison</h3>
+                    <p>Benchmark Logistic Regression, Random Forest, and Multinomial Naive Bayes with interactive performance metrics.</p>
+                </div>
+            </div>
+
+            <div class="glass-card tilt-card">
+                <div class="tilt-content">
+                    <span class="feature-icon">🧠</span>
+                    <h3>AI Explanations</h3>
+                    <p>Human-readable reasoning behind every prediction. Understand why content is flagged as fake or genuine.</p>
+                </div>
+            </div>
+
+            <div class="glass-card tilt-card">
+                <div class="tilt-content">
+                    <span class="feature-icon">📁</span>
+                    <h3>Batch Processing</h3>
+                    <p>Upload CSV files for bulk analysis. Process hundreds of articles simultaneously with exportable reports.</p>
+                </div>
+            </div>
+
+            <div class="glass-card tilt-card">
+                <div class="tilt-content">
+                    <span class="feature-icon">💬</span>
+                    <h3>Sentiment Analysis</h3>
+                    <p>Polarity and subjectivity scoring via TextBlob integration. Detect emotionally manipulative language patterns.</p>
+                </div>
+            </div>
+
+            <div class="glass-card tilt-card">
+                <div class="tilt-content">
+                    <span class="feature-icon">🎨</span>
+                    <h3>Cyberpunk UI</h3>
+                    <p>Immersive glassmorphism interface with neon accents, 3D animations, and real-time data visualizations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NLP Pipeline Section -->
+    <section class="section">
+        <h2 class="section-title">NLP Pipeline Architecture</h2>
+        <p class="section-subtitle">From raw text to intelligent classification in milliseconds.</p>
+
+        <div class="glass-card" style="padding: 3rem;">
+            <div class="pipeline-trace">
+                <div class="pipeline-step">
+                    <div class="step-icon">📝</div>
+                    <div class="step-name">Raw Text</div>
+                </div>
+                <div class="pipeline-step">
+                    <div class="step-icon">🔤</div>
+                    <div class="step-name">Lowercase + Regex</div>
+                </div>
+                <div class="pipeline-step">
+                    <div class="step-icon">✂️</div>
+                    <div class="step-name">Tokenization</div>
+                </div>
+                <div class="pipeline-step">
+                    <div class="step-icon">🚫</div>
+                    <div class="step-name">Stopword Removal</div>
+                </div>
+                <div class="pipeline-step">
+                    <div class="step-icon">🌱</div>
+                    <div class="step-name">Porter Stemming</div>
+                </div>
+                <div class="pipeline-step">
+                    <div class="step-icon">📊</div>
+                    <div class="step-name">TF-IDF Vector</div>
+                </div>
+                <div class="pipeline-step">
+                    <div class="step-icon">🤖</div>
+                    <div class="step-name">ML Prediction</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Terminal Section -->
+    <section class="section">
+        <h2 class="section-title">Quick Start</h2>
+        <p class="section-subtitle">Get the system running in seconds.</p>
+
+        <div class="terminal">
+            <div class="terminal-content">
+                <div><span class="terminal-prompt">$</span> <span class="terminal-command">git clone https://github.com/issu321/Fake-News-Detection-Using-NLP.git</span></div>
+                <div><span class="terminal-prompt">$</span> <span class="terminal-command">cd Fake-News-Detection-Using-NLP</span></div>
+                <div><span class="terminal-prompt">$</span> <span class="terminal-command">chmod +x install.sh && ./install.sh</span></div>
+                <div><span class="terminal-prompt">$</span> <span class="terminal-command">streamlit run app.py</span></div>
+                <div style="margin-top: 1rem; color: var(--neon-green);">✓ Server running at http://localhost:8501</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section" style="text-align: center;">
+        <div class="glass-card" style="max-width: 800px; margin: 0 auto;">
+            <h2 class="section-title" style="margin-bottom: 1rem;">Ready to Detect Fake News?</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 2rem; font-size: 1.1rem;">
+                Try our live demo with real-time NLP analysis and confidence scoring.
+            </p>
+            <a href="detect.html" class="btn btn-primary btn-glow" style="font-size: 1.1rem; padding: 1.25rem 3rem;">
+                <span>🚀</span> Launch Live Demo
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>Developed by <a href="https://github.com/issu321" target="_blank">issu321</a> | © 2026 Fake News Detection Using NLP</p>
+        <p style="margin-top: 0.5rem; font-size: 0.8rem;">Built with Python · Streamlit · scikit-learn · NLTK · TextBlob</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Animate stat numbers on scroll
+        const statObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const el = entry.target;
+                    const target = parseInt(el.getAttribute('data-count'));
+                    const suffix = el.parentElement.querySelector('.stat-label').textContent.includes('%') ? '%' : '+';
+                    animateNumber(el, target, 2000, suffix);
+                    statObserver.unobserve(el);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        document.querySelectorAll('.stat-value[data-count]').forEach(el => {
+            statObserver.observe(el);
+        });
+    </script>
+</body>
+</html>
